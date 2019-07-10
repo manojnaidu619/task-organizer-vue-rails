@@ -1,24 +1,10 @@
-# README
+## Task-Organizer-Vue-Rails
+#### This project is built using Vue js as a frontend Javascript framework and Rails as a Backend API.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bug reports and pull requests are welcome, follow these steps to contribute to this project..
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1.  Fork it
+2.  Create your feature branch (`git checkout -b my-new-feature`)
+3.  Commit your changes (`git commit -am 'Add some feature'`)
+4.  Push to the Branch (`git push origin my-new-feature`)
+5.  Create new Pull Request
