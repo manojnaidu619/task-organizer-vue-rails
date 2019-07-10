@@ -99,10 +99,11 @@ document.addEventListener("DOMContentLoaded",() => {
         let task = this.tasks.find(item => item.id == id);
 
         if(task && this.task.name && this.task.description){
-          task.name = this.task.name;
-          task.description = this.task.description;
-          task.completed = this.task.completed;
-          this.message = `Task ${id} Updated!`
+          Api.updateTask(this.task).then(function(response){
+            app.listTasks();
+            app.clear();
+            app.message = `Task ${id} Updated!`
+          })
         }
       },
       deleteTask: function(event, id){

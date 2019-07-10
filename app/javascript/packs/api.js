@@ -15,3 +15,13 @@ export function createTask(task){
     console.log(error);
   })
 }
+
+export function updateTask(task){
+  var taskId = task.id;
+  var localTask = {name: task.name, description: task.description, completed: task.completed};
+  return axios.put(`/tasks/${taskId}.json`, localTask).then(function(response){
+    return response.data;
+  }).catch(function(error){
+    console.log(error);
+  })
+}
