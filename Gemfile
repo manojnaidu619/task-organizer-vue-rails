@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'semantic-ui-sass'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'pg'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
