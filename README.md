@@ -1,6 +1,8 @@
 ## Task-Organizer-Vue-Rails
 #### This project is built using Vue js as a frontend Javascript framework and Rails as a Backend API.
 
+[Smash here!](https://tasky916.herokuapp.com/) 👈
+
 Bug reports and pull requests are welcome, follow these steps to contribute to this project..
 
 1.  Fork it
