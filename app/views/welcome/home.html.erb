@@ -1,2 +1,86 @@
-<h1>Welcome#home</h1>
-<p>Find me in app/views/welcome/home.html.erb</p>
+<div id="app" class="main">
+
+  <!-- Beginning of sidebar-->
+  <div class="ui sidebar inverted vertical menu visible fixed left">
+   <div class="ui logo item">
+     <b><i class="icon tasks yellow"></i>Task-Organizer</b>
+   </div>
+   <!--
+   <div class="ui message yellow">
+     This page is not backed by a DB!
+   </div>
+   -->
+   <div class="ui message white">
+     <i class="icon github big"></i><a href="https://github.com/manojnaidu619/task-organizer">Pay a Visit!</a>
+   </div>
+   <div class="ui message green" v-if="message">
+     {{ message }}
+   </div>
+  </div>
+  <!-- End of sidebar -->
+
+  <!-- Main content-->
+
+  <div class="ui container pusher">
+    <div class="ui grid">
+      <div class="six wide column">
+        <div class="todo" class="tasklist" style="padding-top:2em;">
+          <div class="ui header">
+            <i class="icon play orange"></i>In Progress Tasks ({{ todoTasks.length }})
+          </div>
+           <task
+            v-bind:task="task"
+            v-for="task in todoTasks" />
+          </div>
+
+        <div class="completed" class="tasklist" style="padding-top:2em;">
+          <div class="ui header">
+            <i class="icon check circle green"></i>Completed Tasks! ({{ completedTasks.length }})
+          </div>
+          <task
+           v-bind:task="task"
+           v-for="task in completedTasks" />
+        </div>
+       </div>
+
+       <div class="six wide column" style="padding-top:5em;">
+         <div id="editor" class="ui raised segment purple">
+           <div class="ui header grid">
+             <div class="left nine wide column">
+               <i class="icon edit violet"></i> Details
+             </div>
+             <div class="right float five wide column">
+                 <button type="button" class="ui green button right float" v-on:click="clear">
+                   <i class="icon plus circle"></i>New
+                 </button>
+             </div>
+           </div>
+           <div class="ui segment">
+             <form class="ui form" v-on:submit="updateTask($event, task.id)">
+
+               <input type="hidden" name="id" v-model="task.id">
+
+               <div class="field">
+                 <label>Name</label>
+                 <input type="text" name="name" placeholder="Name" required="true" autocomplete="off" v-model="task.name" />
+               </div>
+
+               <div class="field">
+                 <label>Description</label>
+                 <input type="text" name="description" placeholder="Description" required="true" autocomplete="off" v-model="task.description" />
+               </div>
+
+               <div class="field inline">
+                 <label>Completed</label>
+                 <input type="checkbox" v-model="task.completed">
+               </div>
+
+               <button class="ui button orange" type="submit" v-if="action == 'create'" v-on:click="createTask($event, task.id)">Create</button>
+               <button class="ui button green" type="submit" v-if="action == 'edit'" v-on:click="updateTask($event, task.id)">Update</button>
+             </form>
+           </div>
+         </div>
+       </div>
+      </div>
+    </div>
+  </div>
