@@ -1,4 +1,7 @@
 import Vue from 'vue';
+
+const Api = require('./api');
+
 document.addEventListener("DOMContentLoaded",() => {
   var app = new Vue({
   el: '#app',
@@ -25,12 +28,7 @@ document.addEventListener("DOMContentLoaded",() => {
              }
     },
   data: {
-    tasks: [
-      {id:1, name: 'Task 1', description: 'Just some random one', completed: true},
-      {id:2, name: 'Task 2', description: 'Fun as it is!', completed: false},
-      {id:3, name: 'Task 4', description: 'Chill,for fun!', completed: false},
-      {id:4, name: 'Task 5', description: "What's hanging out here!", completed: true}
-    ],
+    tasks: [],
     task: {},
     action: 'create',
     message: ''
@@ -47,6 +45,11 @@ document.addEventListener("DOMContentLoaded",() => {
     }
   },
     methods:{
+      listTasks: function() {
+        Api.listTasks().then(function(response){
+          app.tasks = response;
+        })
+      },
       clear: function(){
         this.task = {};
         this.action = 'create';
@@ -70,15 +73,16 @@ document.addEventListener("DOMContentLoaded",() => {
           this.task.completed = true;
         }
 
-        let taskId = this.nextId;
-        let newTask = Object.assign({}, this.task);
-        if(newTask.name.length && newTask.description.length ){
-          this.tasks.push(newTask);
-          this.message = `Task ${taskId} Created!`;
-        }else{
-          console.log('Please fill out the fields!');
-          this.message = `Please fill out the fields!`;
-        }
+        Api.createTask(this.task).then(function(response){
+          let newTask = Object.assign({}, app.task);
+          if(newTask.name.length && newTask.description.length ){
+            app.listTasks();
+            app.message = `Task ${response.id} Created!`;
+          }else{
+            console.log('Please fill out the fields!');
+            app.message = `Please fill out the fields!`;
+          }
+        })
       },
       editTask: function(event,id){
         this.action = 'edit';
@@ -110,6 +114,7 @@ document.addEventListener("DOMContentLoaded",() => {
           this.message = `Task ${id} Deleted!`
         }
       }
-    }
+    },
+    beforeMount() {this.listTasks()}
  });
 });
