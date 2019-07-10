@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded",() => {
                     <div class="ui grid">
                       <div class="left floated twelve wide column">
                        <div class="ui checkbox">
-                        <input type="checkbox" name="task" v-on:click="app.toggleDone($event, task.id)" :checked="task.completed" />
+                        <input type="checkbox" name="task" v-on:click="$parent.toggleDone($event, task.id)" :checked="task.completed" />
                         <label>{{task.name}} &nbsp; <span class="description">{{ task.description }}</span></label>
                        </div>
                       </div>
                       <div class="right floated three wide column">
-                       <i class="icon pencil blue" alt="Edit" v-on:click="app.editTask($event, task.id)"></i>
-                       <i class="icon trash red" alt="Delete" v-on:click="app.deleteTask($event, task.id)"></i>
+                       <i class="icon pencil blue" alt="Edit" v-on:click="$parent.editTask($event, task.id)"></i>
+                       <i class="icon trash red" alt="Delete" v-on:click="$parent.deleteTask($event, task.id)"></i>
                       </div>
                     </div>
                   </div>
