@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .task.done{
-  background: lightgreen;
+  background: lightgreen !important;
 }
 
 .task.todo{
-  background: lightgoldenrodyellow;
+  background: lightgoldenrodyellow !important;
 }
 
 .description{
@@ -16,4 +16,8 @@
 
 .task.done label{
   text-decoration: line-through;
+}
+
+#editor .segment{
+  background-color: lavender !important;
 }
