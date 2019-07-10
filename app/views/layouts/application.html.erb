@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>      <!-- related to webpack -->
+    <%= javascript_pack_tag 'app' %>              <!-- related to app.js in app/javascript/packs/app.js -->
   </head>
 
   <body>
