@@ -3,6 +3,8 @@
 
 [Smash here!](https://tasky916.herokuapp.com/) 👈
 
+![](./task-manager.gif)
+
 Bug reports and pull requests are welcome, follow these steps to contribute to this project..
 
 1.  Fork it
