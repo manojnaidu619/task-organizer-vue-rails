@@ -3,7 +3,7 @@
 
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://tasky916.herokuapp.com/)
 
-[Smash here!](https://tasky916.herokuapp.com/) 👈
+[//]: # "[Smash here!](https://tasky916.herokuapp.com/) 👈"
 
 ![](./task-manager.gif)
 
