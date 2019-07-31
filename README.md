@@ -1,6 +1,8 @@
 ## Task-Organizer-Vue-Rails
 #### This project is built using Vue js as a frontend Javascript framework and Rails as a Backend API.
 
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://tasky916.herokuapp.com/)
+
 [Smash here!](https://tasky916.herokuapp.com/) 👈
 
 ![](./task-manager.gif)
