@@ -1,7 +1,6 @@
-## Task-Organizer-Vue-Rails
-#### This project is built using Vue js as a frontend Javascript framework and Rails as a Backend API.
+## Task-Organizer-Vue-Rails &nbsp; [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://tasky916.herokuapp.com/)
 
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://tasky916.herokuapp.com/)
+#### This project is built using Vue js as a frontend Javascript framework and Rails as a Backend API.
 
 [//]: # "[Smash here!](https://tasky916.herokuapp.com/) 👈"
 
